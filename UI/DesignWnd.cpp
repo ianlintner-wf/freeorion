@@ -110,6 +110,7 @@ namespace {
             case PC_RESEARCH:
             case PC_INDUSTRY:
             case PC_TRADE:
+            case PC_BATTLE_SCANNER:
                 return part_type->Capacity();
                 break;
             case PC_GENERAL:

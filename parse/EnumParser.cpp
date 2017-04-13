@@ -96,6 +96,7 @@ namespace parse {
             |   tok.Industry_           [ _val = PC_INDUSTRY ]
             |   tok.Trade_              [ _val = PC_TRADE ]
             |   tok.ProductionLocation_ [ _val = PC_PRODUCTION_LOCATION ]
+            |   tok.BattleScanner_      [ _val = PC_BATTLE_SCANNER ]
             ;
         static bool once = true;
         if (once) {

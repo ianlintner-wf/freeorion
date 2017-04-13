@@ -859,7 +859,9 @@ void ShipDataPanel::Refresh() {
                 TroopIcon(), UserString("SHIP_TROOPS_TITLE"),
                 UserString("SHIP_TROOPS_STAT")));
 
-        } else if (entry.first == METER_SECONDARY_STAT) {
+        } else if (entry.first == METER_SECONDARY_STAT ||
+                   entry.first == METER_TERTIARY_STAT)
+        {
             entry.second->SetBrowseInfoWnd(GG::Wnd::Create<ShipFightersBrowseWnd>(
                 m_ship_id, entry.first));
             entry.second->SetBrowseModeTime(GetOptionsDB().Get<int>("UI.tooltip.extended-delay"), 1);

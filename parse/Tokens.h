@@ -246,6 +246,7 @@
     (NextTurnPopGrowth)                         \
     (NextYoungerStarType)                       \
     (NoDefaultCapacityEffect)                   \
+    (Noisiness)                                 \
     (None)                                      \
     (NoOp)                                      \
     (NoStar)                                    \
@@ -399,6 +400,7 @@
     (SetTargetPopulation)                       \
     (SetTargetResearch)                         \
     (SetTargetTrade)                            \
+    (SetTertiaryStat)                           \
     (SetTexture)                                \
     (SetTrade)                                  \
     (SetTroops)                                 \

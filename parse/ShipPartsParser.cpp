@@ -52,6 +52,7 @@ namespace {
             qi::_f_type _f;
             qi::_g_type _g;
             qi::_h_type _h;
+            qi::_i_type _i;
             qi::_pass_type _pass;
             qi::_r1_type _r1;
             qi::eps_type eps;
@@ -81,6 +82,9 @@ namespace {
                    | (parse::detail::label(Shots_token)     > parse::detail::double_ [ _h = _1 ])   // shots is secondary for direct fire weapons
                    |  eps [ _h = 1.0 ]
                   )
+                > (  (parse::detail::label(Noisiness_token) > parse::detail::double_ [ _i = _1 ])   // noisiness for weapons / fighter bays
+                   |  eps [ _i = 1.0 ]
+                  )
                 > (   tok.NoDefaultCapacityEffect_ [ _g = false ]
                    |  eps [ _g = true ]
                   )
@@ -88,7 +92,7 @@ namespace {
                 >   parse::detail::common_params_parser()           [ _e = _1 ]
                 >   parse::detail::label(Icon_token)        > tok.string    [ _b = _1 ]
                   ) [ insert_(_r1, phoenix::bind(&MoreCommonParams::name, _a),
-                              new_<PartType>(_c, _d, _h, _e, _a, _f, _b, _g)) ]
+                              new_<PartType>(_c, _d, _h, _i, _e, _a, _f, _b, _g)) ]
                 ;
 
             start
@@ -120,6 +124,7 @@ namespace {
                 CommonParams,
                 std::vector<ShipSlotType>,
                 bool,
+                double,
                 double
             >
         > part_type_rule;

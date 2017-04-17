@@ -8168,6 +8168,10 @@ METER_DETECTION
 Detection Range
 
 # Meter types
+METER_BATTLE_DETECTION
+Battle Detection Strength
+
+# Meter types
 METER_SPEED
 Speed
 

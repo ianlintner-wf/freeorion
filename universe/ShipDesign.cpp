@@ -342,6 +342,9 @@ void PartType::Init(const std::vector<std::shared_ptr<Effect::EffectsGroup>>& ef
         case PC_TRADE:
             m_effects.push_back(IncreaseMeter(METER_TARGET_TRADE,   m_capacity));
             break;
+        case PC_BATTLE_SCANNER:
+            m_effects.push_back(IncreaseMeter(METER_BATTLE_DETECTION,m_capacity));
+            break;
         default:
             break;
         }

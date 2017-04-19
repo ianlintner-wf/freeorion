@@ -560,6 +560,7 @@ std::string SetMeter::Dump() const {
     case METER_SIZE:                retval += "Size"; break;
     case METER_STEALTH:             retval += "Stealth"; break;
     case METER_DETECTION:           retval += "Detection"; break;
+    case METER_BATTLE_DETECTION:    retval += "BattleDetection"; break;
     case METER_SPEED:               retval += "Speed"; break;
 
     default:                        retval += "?"; break;

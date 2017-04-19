@@ -632,6 +632,7 @@ void Planet::Reset() {
     GetMeter(METER_DEFENSE)->Reset();
     GetMeter(METER_MAX_DEFENSE)->Reset();
     GetMeter(METER_DETECTION)->Reset();
+    GetMeter(METER_BATTLE_DETECTION)->Reset();
     GetMeter(METER_REBEL_TROOPS)->Reset();
 
     if (m_is_about_to_be_colonized && !OwnedBy(ALL_EMPIRES)) {
@@ -707,6 +708,8 @@ void Planet::Conquer(int conquerer) {
     GetMeter(METER_HAPPINESS)->BackPropagate();
     GetMeter(METER_DETECTION)->SetCurrent(0.0f);
     GetMeter(METER_DETECTION)->BackPropagate();
+    GetMeter(METER_BATTLE_DETECTION)->SetCurrent(0.0f);
+    GetMeter(METER_BATTLE_DETECTION)->BackPropagate();
 }
 
 bool Planet::Colonize(int empire_id, const std::string& species_name, double population) {
@@ -888,6 +891,7 @@ void Planet::ResetTargetMaxUnpairedMeters() {
     GetMeter(METER_MAX_TROOPS)->ResetCurrent();
     GetMeter(METER_REBEL_TROOPS)->ResetCurrent();
     GetMeter(METER_DETECTION)->ResetCurrent();
+    GetMeter(METER_BATTLE_DETECTION)->ResetCurrent();
 }
 
 void Planet::ClampMeters() {
@@ -906,4 +910,5 @@ void Planet::ClampMeters() {
 
     UniverseObject::GetMeter(METER_REBEL_TROOPS)->ClampCurrentToRange();
     UniverseObject::GetMeter(METER_DETECTION)->ClampCurrentToRange();
+    UniverseObject::GetMeter(METER_BATTLE_DETECTION)->ClampCurrentToRange();
 }

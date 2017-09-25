@@ -361,7 +361,7 @@ BOOST_AUTO_TEST_CASE(ShipPartsClassParser) {
     ShipPartClass result;
 
     // Literal is number of tests, not number of enums.
-    BOOST_REQUIRE_MESSAGE(NUM_SHIP_PART_CLASSES == 17, "Untested enumeration value.");
+    BOOST_REQUIRE_MESSAGE(NUM_SHIP_PART_CLASSES == 18, "Untested enumeration value.");
 
     BOOST_CHECK(parse("ShortRange", result, parse::ship_part_class_enum()));
     BOOST_CHECK(result == PC_DIRECT_WEAPON);
@@ -413,6 +413,9 @@ BOOST_AUTO_TEST_CASE(ShipPartsClassParser) {
 
     BOOST_CHECK(parse("ProductionLocation", result, parse::ship_part_class_enum()));
     BOOST_CHECK(result == PC_PRODUCTION_LOCATION);
+
+    BOOST_CHECK(parse("BattleScanner", result, parse::ship_part_class_enum()));
+    BOOST_CHECK(result == PC_BATTLE_SCANNER);
 
     // XXX: is not modifying result the correct behaviour?
     result = INVALID_SHIP_PART_CLASS;
